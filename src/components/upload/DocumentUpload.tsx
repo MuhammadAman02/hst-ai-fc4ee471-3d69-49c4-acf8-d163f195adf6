@@ -2,6 +2,8 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Upload, X, FileText, Check, AlertTriangle } from "lucide-react";
 import { toast } from "sonner";
+import { documentValidationService } from "../../services/documentValidation";
+import { useValidation } from "../../context/ValidationContext";
 
 type FileWithPreview = {
   file: File;
@@ -14,6 +16,7 @@ const DocumentUpload = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const navigate = useNavigate();
+  const { addValidationResult, clearValidationResults } = useValidation();
 
   const documentTypes = [
     { value: "bank_statement", label: "Bank Statement" },
@@ -96,14 +99,51 @@ const DocumentUpload = () => {
     }
 
     setIsUploading(true);
-
-    // Simulate upload process
-    setTimeout(() => {
-      setIsUploading(false);
-      toast.success("Documents uploaded successfully");
+    clearValidationResults(); // Clear previous results
+    
+    try {
+      // Process each file based on its type
+      const validationPromises = files.map(async (fileWithType) => {
+        if (fileWithType.type === "bank_statement") {
+          // Use our bank statement validation service
+          return await documentValidationService.validateBankStatement(fileWithType.file);
+        } else {
+          // For other document types, return a placeholder result
+          // In a real app, you would have specific validation for each document type
+          return {
+            id: `doc-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+            name: fileWithType.file.name,
+            type: fileWithType.type,
+            status: "pending" as const,
+            score: 0,
+            issues: [],
+            validations: [
+              { name: "Document format", status: "pending" as const }
+            ]
+          };
+        }
+      });
+      
+      // Wait for all validations to complete
+      const results = await Promise.all(validationPromises);
+      
+      // Add each result to the context
+      results.forEach(result => {
+        addValidationResult(result);
+      });
+      
+      // Show success message
+      toast.success(`Validated ${results.length} document(s) successfully`);
+      
+      // Navigate to results page
       navigate("/results");
-    }, 2000);
-  }, [files, navigate]);
+    } catch (error) {
+      console.error("Validation error:", error);
+      toast.error("An error occurred during document validation");
+    } finally {
+      setIsUploading(false);
+    }
+  }, [files, navigate, addValidationResult, clearValidationResults]);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -196,7 +236,7 @@ const DocumentUpload = () => {
                 isUploading || files.length === 0 ? "opacity-50 cursor-not-allowed" : ""
               }`}
             >
-              {isUploading ? "Uploading..." : "Validate Documents"}
+              {isUploading ? "Validating..." : "Validate Documents"}
             </button>
           </div>
         </form>
