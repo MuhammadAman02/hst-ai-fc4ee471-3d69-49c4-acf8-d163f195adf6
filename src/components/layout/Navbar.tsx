@@ -22,7 +22,11 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <img src="/hst-solutions-logo.png" alt="HST Solutions Logo" className="h-10 w-auto" />
+              <img 
+                src="https://www.hst.ie/wp-content/uploads/2024/12/logo.svg" 
+                alt="HST Solutions Logo" 
+                className="h-8 w-auto"
+              />
             </Link>
           </div>
 
