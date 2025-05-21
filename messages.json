@@ -50,5 +50,9 @@
   {
     "role": "user",
     "content": "use this source as the logo https://www.hst.ie/wp-content/uploads/2024/12/logo.svgin the url on navbar"
+  },
+  {
+    "role": "ai_message",
+    "content": "Certainly! I'll update the Navbar component to use the SVG logo from the provided URL. Let's make this change in the Navbar component.\n\n\n\nThe Navbar component has been updated to use the SVG logo from the provided URL.\n</HST-code>\n\nThe Navbar now uses the SVG logo from https://www.hst.ie/wp-content/uploads/2024/12/logo.svg as requested."
   }
 ]
