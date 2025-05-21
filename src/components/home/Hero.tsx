@@ -47,10 +47,60 @@ const Hero = () => {
                         <AlertTriangle className="h-8 w-8 text-red-600" />
                       </div>
                     </div>
-                    <div className="w-full h-12 bg-gray-100 rounded-md mb-4 animate-pulse-slow"></div>
-                    <div className="w-full h-12 bg-gray-100 rounded-md mb-4 animate-pulse-slow"></div>
-                    <div className="w-3/4 h-12 bg-gray-100 rounded-md animate-pulse-slow"></div>
-                    <div className="mt-6 flex justify-between w-full">
+                    
+                    {/* Document validation visualization */}
+                    <div className="w-full border border-gray-200 rounded-md p-3 mb-4 bg-gray-50">
+                      <div className="flex justify-between items-center mb-2">
+                        <div className="flex items-center">
+                          <FileCheck className="h-4 w-4 text-brand-600 mr-2" />
+                          <span className="text-sm font-medium">Bank Statement</span>
+                        </div>
+                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Verified</span>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="h-2 bg-green-200 rounded-full w-full"></div>
+                        <div className="flex justify-between text-xs text-gray-500">
+                          <span>Format</span>
+                          <span>100%</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="w-full border border-gray-200 rounded-md p-3 mb-4 bg-gray-50">
+                      <div className="flex justify-between items-center mb-2">
+                        <div className="flex items-center">
+                          <FileCheck className="h-4 w-4 text-brand-600 mr-2" />
+                          <span className="text-sm font-medium">Payslip</span>
+                        </div>
+                        <span className="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">Warning</span>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="h-2 bg-yellow-200 rounded-full w-3/4"></div>
+                        <div className="flex justify-between text-xs text-gray-500">
+                          <span>Consistency</span>
+                          <span>75%</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="w-full border border-gray-200 rounded-md p-3 mb-4 bg-gray-50">
+                      <div className="flex justify-between items-center mb-2">
+                        <div className="flex items-center">
+                          <FileCheck className="h-4 w-4 text-brand-600 mr-2" />
+                          <span className="text-sm font-medium">ID Document</span>
+                        </div>
+                        <span className="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full">Alert</span>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="h-2 bg-red-200 rounded-full w-1/2"></div>
+                        <div className="flex justify-between text-xs text-gray-500">
+                          <span>Authenticity</span>
+                          <span>50%</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="mt-2 flex justify-between w-full">
                       <div className="h-10 w-24 bg-green-100 rounded-md flex items-center justify-center">
                         <span className="text-sm font-medium text-green-800">Valid</span>
                       </div>
