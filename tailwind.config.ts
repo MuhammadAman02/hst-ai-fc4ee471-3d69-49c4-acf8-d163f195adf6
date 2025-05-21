@@ -62,35 +62,17 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Status colors
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					light: 'hsl(var(--success-light))',
-					dark: 'hsl(var(--success-dark))',
-				},
-				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					light: 'hsl(var(--warning-light))',
-					dark: 'hsl(var(--warning-dark))',
-				},
-				alert: {
-					DEFAULT: 'hsl(var(--alert))',
-					light: 'hsl(var(--alert-light))',
-					dark: 'hsl(var(--alert-dark))',
-				},
-				// Brand colors
 				brand: {
-					DEFAULT: 'hsl(var(--brand))',
-					'50': 'hsl(var(--brand-50))',
-					'100': 'hsl(var(--brand-100))',
-					'200': 'hsl(var(--brand-200))',
-					'300': 'hsl(var(--brand-300))',
-					'400': 'hsl(var(--brand-400))',
-					'500': 'hsl(var(--brand-500))',
-					'600': 'hsl(var(--brand-600))',
-					'700': 'hsl(var(--brand-700))',
-					'800': 'hsl(var(--brand-800))',
-					'900': 'hsl(var(--brand-900))',
+					50: '#f0f9ff',
+					100: '#e0f2fe',
+					200: '#bae6fd',
+					300: '#7dd3fc',
+					400: '#38bdf8',
+					500: '#0ea5e9',
+					600: '#0284c7',
+					700: '#0369a1',
+					800: '#075985',
+					900: '#0c4a6e',
 				},
 			},
 			borderRadius: {
