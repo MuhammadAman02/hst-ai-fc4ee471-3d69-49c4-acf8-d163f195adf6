@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Shield, FileCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,8 +22,7 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <Shield className="h-8 w-8 text-brand-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">HST Validator</span>
+              <img src="/hst-solutions-logo.png" alt="HST Solutions Logo" className="h-10 w-auto" />
             </Link>
           </div>
 
