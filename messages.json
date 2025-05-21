@@ -46,5 +46,9 @@
   {
     "role": "ai_message",
     "content": "Certainly! I'll update the Navbar component to include the logo you've shared. The logo features a circular design with \"HST.\" text inside, followed by \"SOLUTIONS\" in a larger font, and a tagline \"Engineering The Future Today\" below. Let's implement this in the Navbar.\n\n\n\nNow, let's update the Navbar component to include the logo:\n\n\n\nLet's also update the tailwind.config.ts file to ensure we have the correct brand colors:\n\n\n</HST-code>\n\nThe Navbar has been updated to include the HST Solutions logo. The logo is now displayed on the left side of the navbar, replacing the previous icon and text combination. The rest of the navbar functionality remains the same, including responsive design for mobile devices."
+  },
+  {
+    "role": "user",
+    "content": "use this source as the logo https://www.hst.ie/wp-content/uploads/2024/12/logo.svgin the url on navbar"
   }
 ]
