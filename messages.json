@@ -38,5 +38,9 @@
   {
     "role": "user",
     "content": "make this the logo"
+  },
+  {
+    "role": "user",
+    "content": "make this is the logo on the navbar"
   }
 ]
