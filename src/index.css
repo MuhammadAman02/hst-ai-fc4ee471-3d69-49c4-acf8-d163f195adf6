@@ -49,23 +49,32 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-    
-    /* Brand colors */
-    --brand: 210 100% 50%;
-    --brand-foreground: 0 0% 100%;
-    
+
     /* Status colors */
     --success: 142 76% 36%;
-    --success-dark: 142 76% 30%;
-    --success-light: 142 76% 97%;
-    
+    --success-light: 142 76% 95%;
+    --success-dark: 142 76% 26%;
+
     --warning: 38 92% 50%;
-    --warning-dark: 38 92% 40%;
     --warning-light: 38 92% 95%;
-    
+    --warning-dark: 38 92% 30%;
+
     --alert: 0 84% 60%;
-    --alert-dark: 0 84% 50%;
     --alert-light: 0 84% 95%;
+    --alert-dark: 0 84% 40%;
+
+    /* Brand colors */
+    --brand: 210 100% 50%;
+    --brand-50: 210 100% 95%;
+    --brand-100: 210 100% 90%;
+    --brand-200: 210 100% 80%;
+    --brand-300: 210 100% 70%;
+    --brand-400: 210 100% 60%;
+    --brand-500: 210 100% 50%;
+    --brand-600: 210 100% 40%;
+    --brand-700: 210 100% 30%;
+    --brand-800: 210 100% 20%;
+    --brand-900: 210 100% 10%;
   }
 
   .dark {
@@ -118,57 +127,18 @@
 }
 
 /* Custom utility classes */
-@layer components {
-  .btn-primary {
-    @apply bg-brand-600 hover:bg-brand-700 text-white py-2 px-4 rounded-md transition-colors duration-200;
-  }
-  
-  .btn-secondary {
-    @apply bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 py-2 px-4 rounded-md transition-colors duration-200;
-  }
-  
-  .gradient-heading {
-    @apply bg-gradient-to-r from-brand-600 to-teal-600 bg-clip-text text-transparent;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-200 hover:shadow-md hover:-translate-y-1;
-  }
-  
-  /* Status colors */
-  .bg-success {
-    @apply bg-green-600;
-  }
-  
-  .bg-warning {
-    @apply bg-amber-500;
-  }
-  
-  .bg-alert {
-    @apply bg-red-500;
-  }
-  
-  .bg-success-light {
-    @apply bg-green-50;
-  }
-  
-  .bg-warning-light {
-    @apply bg-amber-50;
-  }
-  
-  .bg-alert-light {
-    @apply bg-red-50;
-  }
-  
-  .text-success-dark {
-    @apply text-green-700;
-  }
-  
-  .text-warning-dark {
-    @apply text-amber-700;
-  }
-  
-  .text-alert-dark {
-    @apply text-red-700;
-  }
+.gradient-heading {
+  @apply bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-transparent;
+}
+
+.btn-primary {
+  @apply px-4 py-2 bg-brand-600 text-white rounded-md hover:bg-brand-700 transition-colors duration-200 font-medium;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 bg-white text-brand-600 border border-brand-600 rounded-md hover:bg-brand-50 transition-colors duration-200 font-medium;
+}
+
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-md;
 }
