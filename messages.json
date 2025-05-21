@@ -14,5 +14,9 @@
   {
     "role": "ai_message",
     "content": "I'll update the Hero section to replace those placeholder lines with more realistic and visually appealing content.\n\n\n</HST-code>\n\nThe hero section now displays realistic document validation visualizations with progress bars, status indicators, and document types instead of empty placeholder lines."
+  },
+  {
+    "role": "user",
+    "content": "there is currently no logic when i click on the validate documents button, implement real business logic to validate the integrity of the bank statement, ensure you can check to see if the numbers and balance forward matches up, there are no attempt to modify the document such as changing any of the figures, implement  appropriate logic to verify if the bank statement and the transactions within a bank statement are legitimate in terms of numbers and match of it"
   }
 ]
